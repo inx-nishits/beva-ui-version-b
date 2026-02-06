@@ -1,0 +1,475 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   BEVA UI - PREMIUM DESIGN SYSTEM V3
+   Modern, Sophisticated, Client-Ready
+   ======================================== */
+
+:root {
+  /* Brand Colors - Cuesports Central */
+  --brand-green: #1A5C35;
+  --brand-green-light: #2A7D4F;
+  --brand-green-dark: #0F3D23;
+  --brand-marine: #001E3E;
+  --brand-marine-light: #003366;
+  --brand-yellow: #F0C22E;
+  --brand-yellow-light: #F5D563;
+
+  /* Extended Palette */
+  --surface-primary: #FFFFFF;
+  --surface-secondary: #FAFBFC;
+  --surface-tertiary: #F4F6F8;
+  --surface-elevated: #FFFFFF;
+
+  /* Text Colors */
+  --text-primary: #0A1628;
+  --text-secondary: #4A5568;
+  --text-tertiary: #718096;
+  --text-inverse: #FFFFFF;
+
+  /* Border & Divider */
+  --border-light: #E2E8F0;
+  --border-medium: #CBD5E0;
+  --border-dark: #A0AEC0;
+
+  /* Shadows - Layered Depth */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-brand: 0 10px 40px -10px rgba(26, 92, 53, 0.3);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.18);
+
+  /* Spacing System */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Border Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-full: 9999px;
+}
+
+@layer base {
+  * {
+    @apply border-[var(--border-light)];
+  }
+
+  body {
+    @apply bg-[var(--surface-secondary)] text-[var(--text-primary)] antialiased;
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Sora', 'Space Grotesk', sans-serif;
+    @apply font-bold text-[var(--text-primary)];
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  /* ========================================
+     PREMIUM LAYOUT SYSTEM
+     ======================================== */
+
+  .beva-container {
+    @apply w-full max-w-[1320px] mx-auto px-5 sm:px-6 lg:px-8;
+  }
+
+  .beva-container-wide {
+    @apply w-full max-w-[1600px] mx-auto px-5 sm:px-6 lg:px-10;
+  }
+
+  .beva-container-narrow {
+    @apply w-full max-w-4xl mx-auto px-5 sm:px-6;
+  }
+
+  .beva-section {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .beva-section-sm {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+
+  /* ========================================
+     PREMIUM CARD SYSTEM
+     ======================================== */
+
+  .beva-card {
+    @apply bg-white rounded-2xl border border-[var(--border-light)] p-6 transition-all duration-300;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .beva-card-hover {
+    @apply beva-card hover:shadow-xl hover:-translate-y-1 hover:border-emerald-200;
+  }
+
+  .beva-card-glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    @apply rounded-2xl border border-white/20 p-6 shadow-lg;
+  }
+
+  .beva-card-gradient {
+    @apply rounded-2xl p-6 relative overflow-hidden;
+    background: linear-gradient(135deg, var(--brand-marine) 0%, var(--brand-marine-light) 100%);
+  }
+
+  /* ========================================
+     PREMIUM BUTTON SYSTEM
+     ======================================== */
+
+  .beva-btn {
+    @apply inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-offset-2 relative overflow-hidden;
+  }
+
+  .beva-btn-primary {
+    @apply beva-btn bg-[var(--brand-green)] text-white hover:bg-[var(--brand-green-dark)] focus:ring-[var(--brand-green)] shadow-md hover:shadow-xl hover:-translate-y-0.5;
+  }
+
+  .beva-btn-secondary {
+    @apply beva-btn bg-[var(--brand-marine)] text-white hover:bg-[var(--brand-marine-light)] focus:ring-[var(--brand-marine)] shadow-md hover:shadow-xl hover:-translate-y-0.5;
+  }
+
+  .beva-btn-outline {
+    @apply beva-btn bg-transparent border-2 border-[var(--brand-green)] text-[var(--brand-green)] hover:bg-[var(--brand-green)] hover:text-white focus:ring-[var(--brand-green)];
+  }
+
+  .beva-btn-ghost {
+    @apply beva-btn bg-transparent text-[var(--text-secondary)] hover:bg-[var(--surface-tertiary)] hover:text-[var(--text-primary)];
+  }
+
+  .beva-btn-lg {
+    @apply px-8 py-4 text-base rounded-2xl;
+  }
+
+  .beva-btn-sm {
+    @apply px-4 py-2 text-xs rounded-lg;
+  }
+
+  /* ========================================
+     PREMIUM FORM SYSTEM
+     ======================================== */
+
+  .beva-input {
+    @apply w-full px-4 py-3.5 bg-white border-2 border-[var(--border-light)] rounded-xl text-sm text-[var(--text-primary)] placeholder:text-[var(--text-tertiary)] transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-emerald-100 focus:border-[var(--brand-green)];
+  }
+
+  .beva-input-lg {
+    @apply beva-input py-4 text-base rounded-2xl;
+  }
+
+  .beva-label {
+    @apply block text-sm font-semibold text-[var(--text-primary)] mb-2;
+  }
+
+  .beva-textarea {
+    @apply beva-input min-h-[120px] resize-none;
+  }
+
+  /* ========================================
+     PREMIUM BADGE SYSTEM
+     ======================================== */
+
+  .beva-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .beva-badge-success {
+    @apply beva-badge bg-emerald-50 text-emerald-700 border border-emerald-200;
+  }
+
+  .beva-badge-live {
+    @apply beva-badge bg-red-50 text-red-700 border border-red-200;
+  }
+
+  .beva-badge-warning {
+    @apply beva-badge bg-amber-50 text-amber-700 border border-amber-200;
+  }
+
+  .beva-badge-info {
+    @apply beva-badge bg-blue-50 text-blue-700 border border-blue-200;
+  }
+
+  .beva-badge-neutral {
+    @apply beva-badge bg-gray-50 text-gray-700 border border-gray-200;
+  }
+
+  /* ========================================
+     PREMIUM TYPOGRAPHY
+     ======================================== */
+
+  .beva-display {
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--brand-green) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .beva-heading-xl {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
+  }
+
+  .beva-heading-lg {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight;
+  }
+
+  .beva-heading-md {
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight;
+  }
+
+  .beva-heading-sm {
+    @apply text-xl md:text-2xl font-semibold;
+  }
+
+  .beva-text-lead {
+    @apply text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed;
+  }
+
+  .beva-text-body {
+    @apply text-base text-[var(--text-secondary)] leading-relaxed;
+  }
+
+  /* ========================================
+     PREMIUM EFFECTS
+     ======================================== */
+
+  .beva-gradient-bg {
+    background: linear-gradient(135deg, #FAFBFC 0%, #F4F6F8 100%);
+  }
+
+  .beva-gradient-brand {
+    background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-marine) 100%);
+  }
+
+  .beva-glow-green {
+    box-shadow: 0 0 40px rgba(26, 92, 53, 0.3);
+  }
+
+  .beva-glow-yellow {
+    box-shadow: 0 0 40px rgba(240, 194, 46, 0.3);
+  }
+
+  /* ========================================
+     PREMIUM GRID SYSTEM
+     ======================================== */
+
+  .beva-grid {
+    @apply grid gap-6 md:gap-8;
+  }
+
+  .beva-grid-2 {
+    @apply beva-grid grid-cols-1 md:grid-cols-2;
+  }
+
+  .beva-grid-3 {
+    @apply beva-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+  }
+
+  .beva-grid-4 {
+    @apply beva-grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4;
+  }
+
+  /* ========================================
+     SOCIAL MEDIA COMPONENTS
+     ======================================== */
+
+  .beva-social-link {
+    @apply w-10 h-10 rounded-full bg-[var(--surface-tertiary)] flex items-center justify-center text-[var(--text-secondary)] transition-all duration-300 hover:bg-[var(--brand-green)] hover:text-white hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .beva-social-link-lg {
+    @apply w-12 h-12 rounded-xl;
+  }
+}
+
+/* ========================================
+   PREMIUM SCROLLBAR
+   ======================================== */
+
+::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[var(--surface-tertiary)];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[var(--border-medium)] rounded-full;
+  transition: background 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-[var(--brand-green)];
+}
+
+/* ========================================
+   PREMIUM ANIMATIONS
+   ======================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.beva-animate-fade-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.beva-animate-fade-scale {
+  animation: fadeInScale 0.4s ease-out;
+}
+
+.beva-animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.beva-animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ========================================
+   PREMIUM UTILITIES
+   ======================================== */
+
+.beva-divider {
+  @apply border-t border-[var(--border-light)];
+}
+
+.beva-divider-thick {
+  @apply border-t-2 border-[var(--border-medium)];
+}
+
+.beva-backdrop-blur {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.beva-backdrop-blur-lg {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+.beva-sr-only {
+  @apply sr-only;
+}
+
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-[var(--brand-green)] rounded-lg;
+}
+
+/* ========================================
+   RESPONSIVE HELPERS
+   ======================================== */
+
+.beva-hide-mobile {
+  @apply hidden md:block;
+}
+
+.beva-hide-desktop {
+  @apply block md:hidden;
+}
+
+.beva-stack {
+  @apply flex flex-col gap-4;
+}
+
+.beva-stack-sm {
+  @apply flex flex-col gap-2;
+}
+
+.beva-stack-lg {
+  @apply flex flex-col gap-6;
+}
