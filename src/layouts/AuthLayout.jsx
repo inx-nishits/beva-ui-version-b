@@ -12,13 +12,13 @@ const AuthLayout = () => {
                     <div className="grid lg:grid-cols-2">
 
                         {/* Left Column - Brand & Info */}
-                        <div className="hidden lg:flex bg-gradient-to-br from-[var(--brand-marine)] to-[var(--brand-marine-light)] p-12 relative overflow-hidden h-[700px] max-h-[calc(100vh-8rem)]">
+                        <div className="hidden lg:flex bg-gradient-to-br from-[var(--brand-marine)] to-[var(--brand-marine-light)] p-12 relative overflow-hidden min-h-[600px]">
                             {/* Subtle Pattern Overlay */}
                             <div className="absolute inset-0 opacity-5" style={{
                                 backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
                             }}></div>
 
-                            <div className="relative z-10 flex flex-col justify-between w-full h-full">
+                            <div className="relative z-10 flex flex-col justify-between w-full">
                                 {/* Top Branding Section */}
                                 <div className="space-y-10">
                                     <div className="flex items-center justify-between">
@@ -86,7 +86,7 @@ const AuthLayout = () => {
                         </div>
 
                         {/* Right Column - Auth Forms */}
-                        <div className="p-8 lg:p-12 h-full max-h-[calc(100vh-8rem)] overflow-y-auto bg-white flex flex-col">
+                        <div className="p-8 lg:p-12 bg-white flex flex-col justify-center">
                             {/* Mobile Logo & Back - Visible only on mobile/tablet */}
                             <div className="lg:hidden flex items-center justify-between mb-10 pb-6 border-b border-gray-100">
                                 <Link to="/">
@@ -105,7 +105,7 @@ const AuthLayout = () => {
                                 </Link>
                             </div>
 
-                            <div className="flex-1 flex flex-col justify-center max-w-sm mx-auto w-full py-4">
+                            <div className="max-w-sm mx-auto w-full py-4">
                                 <Outlet />
                             </div>
                         </div>

@@ -171,26 +171,6 @@ const LandingPageV3 = () => {
                                 </div>
                             </motion.div>
 
-                            {/* Floating Widget 1 - Live Table View */}
-                            <motion.div
-                                initial={{ opacity: 0, x: 50 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: 0.4, duration: 0.6 }}
-                                className="absolute -top-4 -right-2 lg:-right-8 bg-white/90 backdrop-blur-xl p-4 rounded-2xl shadow-xl border border-white max-w-[180px] hidden md:block"
-                            >
-                                <div className="flex items-center gap-3 mb-3">
-                                    <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center">
-                                        <Target size={16} className="text-emerald-600" />
-                                    </div>
-                                    <p className="text-[11px] font-bold text-[var(--text-primary)]">Precision AI Scoring</p>
-                                </div>
-                                <div className="space-y-1">
-                                    <div className="h-1.5 w-full bg-gray-100 rounded-full overflow-hidden">
-                                        <div className="h-full w-[85%] bg-[var(--brand-green)]"></div>
-                                    </div>
-                                    <p className="text-[9px] text-gray-500 font-medium">Auto-frame detection active</p>
-                                </div>
-                            </motion.div>
 
                             {/* Floating Widget 2 - Glicko-2 Progress */}
                             <motion.div
